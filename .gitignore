@@ -45,9 +45,6 @@ temp
 dist
 build
 
-# Static site generators
-public
-
 # IDEs and editors
 .vscode/
 .idea/
