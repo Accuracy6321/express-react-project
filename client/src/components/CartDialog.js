@@ -17,7 +17,7 @@ import StripeCheckoutForm from './StripeCheckoutForm';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const stripePromise = loadStripe('pk_test_51PkgNgLtprroIPUXVsjryue50XioFi05vAb2JSzxOwBOWpcxkBl3H2bxZzUQXZT94jNMBTqgaHHm0oQhcWWVcGqw00l3aDIs5z');
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const ProductBuyButton = styled(Button)`
   background-color: ${({ theme }) => theme.palette.text.secondary};

@@ -49,7 +49,7 @@ const StripeCheckoutForm = forwardRef((props, ref) => {
 
         props.setLoading(true);
 
-        const { data } = await axios.post('http://localhost:5000/api/purchase', {
+        const { data } = await axios.post(process.env.REACT_APP_API_URL + '/api/purchase', {
           email,
           address,
           products: props.cart.map(product => ({
@@ -62,7 +62,7 @@ const StripeCheckoutForm = forwardRef((props, ref) => {
           })).paymentMethod.id,
         });
 
-        const { data: paymentIntent } = await axios.post('http://localhost:5000/api/confirm-purchase', {
+        const { data: paymentIntent } = await axios.post(process.env.REACT_APP_API_URL + '/api/confirm-purchase', {
           paymentIntentId: data.paymentIntentId,
         });
 

@@ -55,7 +55,7 @@ exports.confirmPurchase = async (req, res) => {
   const { paymentIntentId } = req.body;
 
   try {
-    const paymentIntent = await stripe.paymentIntents.confirm(paymentIntentId, { return_url: 'http://localhost:3000/success' });
+    const paymentIntent = await stripe.paymentIntents.confirm(paymentIntentId, { return_url: process.env.REACT_APP_URL + '/success' });
     res.status(200).json(paymentIntent);
   } catch (error) {
     res.status(500).json({ message: error.message });
