@@ -37,6 +37,8 @@ DB_NAME=cozy_threads_db
 DB_USER=your_db_user
 DB_PASSWORD=your_db_password
 STRIPE_SECRET_KEY=your_stripe_secret_key
+REACT_APP_URL=react_url
+DATABASE_URL=database_connection_url
 ```
 
 5. Manually run the seeder to add data to the db:
